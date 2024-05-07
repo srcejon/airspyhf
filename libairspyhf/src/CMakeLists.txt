@@ -48,7 +48,7 @@ set_target_properties(airspyhf PROPERTIES SOVERSION 0)
 
 # Static library
 add_library(airspyhf-static STATIC ${c_sources})
-if(MSVC)
+if(MSVC OR EMSCRIPTEN)
 	set_target_properties(airspyhf-static PROPERTIES OUTPUT_NAME "airspyhf_static")
 else()
 	set_target_properties(airspyhf-static PROPERTIES OUTPUT_NAME "airspyhf")

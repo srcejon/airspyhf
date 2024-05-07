@@ -40,6 +40,10 @@ else()
 add_definitions(-Wall)
 endif()
 
+if(EMSCRIPTEN)
+add_link_options(--bind -sASYNCIFY)
+endif()
+
 if(NOT libairspyhf_SOURCE_DIR)
 find_package(LIBAIRSPYHF REQUIRED)
 include_directories(${LIBAIRSPYHF_INCLUDE_DIR})
